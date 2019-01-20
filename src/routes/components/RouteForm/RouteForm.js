@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
+import { maps } from '../../../shared/services/maps';
+
 import './RouteForm.css';
 class RouteForm extends Component {
 
     startInput = React.createRef();
     dropInput = React.createRef();
+
+    setupAutoComplete = async () => {
+        const maps = await this.props.maps();
+        this.setupStartInputAutoComplete = new maps.places.Autocomplete(this.startInput);
+        this.setupDropInputAutoComplete = new maps.places.Autocomplete(this.dropInput);
+    }
+
+    getRoute = () => {
+        const from = this.setupStartInputAutoComplete.getPlace();
+        const to = this.setupDropInputAutoComplete.getPlace();
+        this.props.getDirections(from, to);
+    }
+
+    componentDidMount() {
+        this.setupAutoComplete();
+    }
 
     render() {
         return (
@@ -22,6 +40,10 @@ class RouteForm extends Component {
             </div>
         )
     }
+}
+
+RouteForm.defaultProps = {
+    maps
 }
 
 export default RouteForm;
