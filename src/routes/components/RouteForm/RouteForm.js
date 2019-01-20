@@ -16,7 +16,7 @@ class RouteForm extends Component {
     getRoute = () => {
         const from = this.setupStartInputAutoComplete.getPlace();
         const to = this.setupDropInputAutoComplete.getPlace();
-        this.props.getDirections(from, to);
+        this.props.getRoutes(from, to);
     }
 
     componentDidMount() {
