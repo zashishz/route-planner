@@ -1,11 +1,14 @@
 import React from 'react'
-import { RouteMap, RouteForm } from './components';
+import { RouteMap, RouteForm, RouteInfo } from './components';
 
 import './Routes.css';
 
 const Routes = () => (
     <div className="container">
-        <RouteForm />
+        <div className="route-details">
+            <RouteForm />
+            <RouteInfo />
+        </div>
         <RouteMap />
     </div>
 );
