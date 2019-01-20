@@ -4,6 +4,10 @@ import { maps } from '../../../shared/services/maps';
 import './RouteForm.css';
 class RouteForm extends Component {
 
+    state = {
+        btnDisabled: true
+    }
+
     startInput = React.createRef();
     dropInput = React.createRef();
 
@@ -11,6 +15,7 @@ class RouteForm extends Component {
         const maps = await this.props.maps();
         this.setupStartInputAutoComplete = new maps.places.Autocomplete(this.startInput);
         this.setupDropInputAutoComplete = new maps.places.Autocomplete(this.dropInput);
+        console.log("as")
     }
 
     getRoute = () => {
@@ -23,19 +28,37 @@ class RouteForm extends Component {
         this.setupAutoComplete();
     }
 
+    btnStateHandler = () => {
+        if(this.startInput.value.length && this.dropInput.value.length) {
+            this.setState({btnDisabled: false})
+        } else {
+            this.setState({btnDisabled: true})
+        }
+    }
+
+    disableButton = () => {
+        this.setState({btnDisabled: true});
+    }
+
     render() {
         return (
             <div className="route-form">
-                <div className="form-input">
+                <form className="form-input">
                     <label>Starting Location</label>
-                    <input type="text" ref={el => (this.startInput = el)} />
-                </div>
-                <div className="form-input">
+                    <div className="form-input-controls">
+                        <input type="text" ref={el => (this.startInput = el)} onChange={this.btnStateHandler}/>
+                        <button type="reset" onClick={this.disableButton}>X</button>
+                    </div>
+                </form>
+                <form className="form-input">
                     <label>Drop-off point</label>
-                    <input type="text" ref={el => (this.dropInput = el)} />
-                </div>
+                    <div className="form-input-controls">
+                        <input type="text" ref={el => (this.dropInput = el)} onChange={this.btnStateHandler} />
+                        <button type="reset" onClick={this.disableButton}>X</button>
+                    </div>
+                </form>
                 <div className="get-route-btn">
-                    <button onClick={this.getRoute}>Get Route</button>
+                    <button onClick={this.getRoute} disabled={this.state.btnDisabled}>Get Route</button>
                 </div>
             </div>
         )

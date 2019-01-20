@@ -1,0 +1,10 @@
+.form-input-controls {
+    display: flex;
+}
+
+.form-input-controls button {
+    border: 0;
+    font-weight: bold;
+    background-color: #e2e2e2;
+    cursor: pointer;
+}
