@@ -22,3 +22,8 @@
     margin: 0.2rem 0;
     cursor: pointer;
 }
+
+.get-route-btn button:disabled,
+.get-route-btn button[disabled]{
+  opacity: 0.5;
+}
