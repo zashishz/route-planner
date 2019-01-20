@@ -1,11 +1,6 @@
 .routeMap-container {
-    width: calc(100% - 32px);
-    padding: 16px;
-    height: 500px;
-
-    @include mobile {
-        height: 300px;
-    }
+    height: 85vh;
+    padding: 1rem;
 }
 
 .routeMap-container > div {
