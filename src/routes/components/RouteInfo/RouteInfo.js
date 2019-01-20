@@ -1,4 +1,5 @@
 import React from 'react';
+import './RouteInfo.css';
 
 const RouteInfoItem = ({ label, value }) => (
     <div className="route-info-item">
