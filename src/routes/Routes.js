@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { RouteMap, RouteForm, RouteInfo } from './components';
 import { Loader } from '../shared/loader';
-import {fetchDirections} from './services';
+import { fetchDirections } from './services';
 
 import './Routes.css';
 
@@ -47,15 +47,20 @@ class Routes extends Component {
     }
 
     render() {
-        let {isLoading, directionsApiResponse} = this.state;
+        let { isLoading, directionsApiResponse } = this.state;
         return (
             <div className="container">
                 <Loader isLoading={isLoading} />
                 <div className="route-details">
-                    <RouteForm getRoutes={this.getRoutes}/>
-                    <RouteInfo />
+                    <RouteForm getRoutes={this.getRoutes} />
+                    {directionsApiResponse && <RouteInfo
+                        totalDistance={directionsApiResponse.total_distance}
+                        totalTime={directionsApiResponse.total_time}
+                    />}
                 </div>
-                <RouteMap directions={directionsApiResponse} />
+                <div className="route-map">
+                    <RouteMap directions={directionsApiResponse} />
+                </div>
             </div>
         );
     }

@@ -1,3 +1,15 @@
 .container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.route-details {
+    flex: 0.3;
+    text-align: left;
+}
+
+.route-map {
+    flex: 0.8
 }
