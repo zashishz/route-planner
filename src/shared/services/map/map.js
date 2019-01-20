@@ -13,14 +13,19 @@ let googleMap;
 const getMap = () => {
     return new Promise((res, rej) => {
         if(googleMap) {
-            res(googleMap.maps);
+            res(googleMap);
         } else {
             GoogleMapsLoader.load((google) => {
                 googleMap = google;
-                res(googleMap.maps);
+                res(googleMap);
             })
         }
     })
 }
 
-export default getMap;
+const map = async () => {
+    const google = await getMap();
+    return google.maps;
+}
+
+export default map;

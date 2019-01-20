@@ -1,3 +1,3 @@
-import getMap from './map';
+import map from './map';
 
-export { getMap };
+export { map };

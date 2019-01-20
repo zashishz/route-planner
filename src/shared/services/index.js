@@ -1,7 +1,7 @@
 import { makeNetworkCall } from './axios';
-import { getMap } from './map';
+import { map } from './map';
 
 export {
     makeNetworkCall,
-    getMap
+    map
 }
