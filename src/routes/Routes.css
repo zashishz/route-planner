@@ -1,13 +1,14 @@
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 0.5rem;
 }
 
 .route-details {
     flex: 0.3;
     text-align: left;
+    margin-left: 1rem;
+    margin-top: 5rem;
 }
 
 .route-map {

@@ -26,6 +26,13 @@ class Routes extends Component {
         alert(msg);
     };
 
+    resetValues = () => {
+        this.setState({
+            isLoading: false,
+            directionsApiResponse: null
+        })
+    }
+
     getRoutes = async (from, to) => {
         this.toggleLoader(true);
         const response = await fetchDirections(from, to).catch(e => {
@@ -52,7 +59,7 @@ class Routes extends Component {
             <div className="container">
                 <Loader isLoading={isLoading} />
                 <div className="route-details">
-                    <RouteForm getRoutes={this.getRoutes} />
+                    <RouteForm getRoutes={this.getRoutes} resetValues={this.resetValues} />
                     {directionsApiResponse && <RouteInfo
                         totalDistance={directionsApiResponse.total_distance}
                         totalTime={directionsApiResponse.total_time}

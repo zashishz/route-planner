@@ -27,3 +27,19 @@
 .get-route-btn button[disabled]{
   opacity: 0.5;
 }
+
+.route-info{
+    margin-top: 0.5rem;
+}
+
+.route-info-item {
+    display: flex;
+}
+
+.route-info-item-label{
+    font-weight: bold
+}
+
+.route-info-item-value {
+    margin-left: 0.3rem;
+}

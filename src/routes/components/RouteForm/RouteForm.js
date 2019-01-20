@@ -15,7 +15,6 @@ class RouteForm extends Component {
         const maps = await this.props.maps();
         this.setupStartInputAutoComplete = new maps.places.Autocomplete(this.startInput);
         this.setupDropInputAutoComplete = new maps.places.Autocomplete(this.dropInput);
-        console.log("as")
     }
 
     getRoute = () => {
@@ -38,6 +37,7 @@ class RouteForm extends Component {
 
     disableButton = () => {
         this.setState({btnDisabled: true});
+        this.props.resetValues();
     }
 
     render() {
