@@ -1,8 +1,13 @@
 import React from 'react'
-import { RouteMap } from './components';
+import { RouteMap, RouteForm } from './components';
+
+import './Routes.css';
 
 const Routes = () => (
-    <RouteMap />
+    <div className="container">
+        <RouteForm />
+        <RouteMap />
+    </div>
 );
 
 export default Routes;
