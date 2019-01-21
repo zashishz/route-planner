@@ -6,9 +6,12 @@ REACT_APP_BASE_URL='http://localhost:8080/'
 REACT_APP_GOOGLE_API_KEY='XXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
 
+The environment variables are embedded during the build time. Since Create React App produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime.
+Please run `npm run build` to access .env keys
+
 To configure for first time
 
-- cd routeplanner-BE && npm install && npm start
+- cd backend && npm install && npm start
 
  This will spin up backend
 
