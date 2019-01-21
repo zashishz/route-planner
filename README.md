@@ -5,9 +5,7 @@ Add .env file to routeplanner root folder with following values:
 REACT_APP_BASE_URL='http://localhost:8080/'
 REACT_APP_GOOGLE_API_KEY='XXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
-
-The environment variables are embedded during the build time. Since Create React App produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime.
-Please run `npm run build` to access .env keys
+make sure to setup .env file first and then start server.
 
 To configure for first time
 
