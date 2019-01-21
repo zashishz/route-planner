@@ -1,45 +1,31 @@
 .form-input {
-    display: flex;
-    flex-direction: column;
-    margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
 }
 
 .form-input label {
-    margin-bottom: 0.2rem;
-    font-weight: bold;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
 }
 
 .form-input input {
-    width: 15rem;
-    padding: 0.4rem;
+  width: 15rem;
+  padding: 0.4rem;
 }
 
-.get-route-btn button {
-    border: 0;
-    background-color: green;
-    color: #fff;
-    padding: 0.5rem;
-    margin: 0.2rem 0;
-    cursor: pointer;
-}
-
-.get-route-btn button:disabled,
-.get-route-btn button[disabled]{
-  opacity: 0.5;
-}
-
-.route-info{
-    margin-top: 0.5rem;
+.route-info {
+  margin-top: 0.5rem;
 }
 
 .route-info-item {
-    display: flex;
+  display: flex;
 }
 
-.route-info-item-label{
-    font-weight: bold
+.route-info-item-label {
+  font-weight: bold;
 }
 
 .route-info-item-value {
-    margin-left: 0.3rem;
+  margin-left: 0.3rem;
 }
