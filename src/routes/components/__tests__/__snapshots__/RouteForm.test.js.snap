@@ -47,13 +47,24 @@ exports[`Render RouteForm correctly render correctly 1`] = `
     </div>
   </form>
   <div
+    className="info-container"
+  />
+  <div
     className="get-route-btn"
   >
     <button
+      className="submit-btn"
       disabled={true}
       onClick={[Function]}
     >
-      Get Route
+      Submit
+    </button>
+    <button
+      className="reset-btn"
+      onClick={[Function]}
+      type="reset"
+    >
+      Reset
     </button>
   </div>
 </div>
