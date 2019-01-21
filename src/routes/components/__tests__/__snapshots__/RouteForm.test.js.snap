@@ -4,30 +4,53 @@ exports[`Render RouteForm correctly render correctly 1`] = `
 <div
   className="route-form"
 >
-  <div
+  <form
     className="form-input"
   >
     <label>
       Starting Location
     </label>
-    <input
-      type="text"
-    />
-  </div>
-  <div
+    <div
+      className="form-input-controls"
+    >
+      <input
+        onChange={[Function]}
+        type="text"
+      />
+      <button
+        onClick={[Function]}
+        type="reset"
+      >
+        X
+      </button>
+    </div>
+  </form>
+  <form
     className="form-input"
   >
     <label>
       Drop-off point
     </label>
-    <input
-      type="text"
-    />
-  </div>
+    <div
+      className="form-input-controls"
+    >
+      <input
+        onChange={[Function]}
+        type="text"
+      />
+      <button
+        onClick={[Function]}
+        type="reset"
+      >
+        X
+      </button>
+    </div>
+  </form>
   <div
     className="get-route-btn"
   >
     <button
+      disabled={true}
       onClick={[Function]}
     >
       Get Route
