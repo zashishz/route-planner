@@ -1,25 +1,27 @@
 This project contains front-end + backend code as well.
 
 Add .env file to routeplanner root folder with following values:
+
 ```
 REACT_APP_BASE_URL='http://localhost:8080/'
 REACT_APP_GOOGLE_API_KEY='XXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
+
 make sure to setup .env file first and then start server.
 
 To configure for first time
 
-- cd backend && npm install && npm start
-
- This will spin up backend
-
-- navigate to routeplanner-FE folder and
-
 ```
-npm install && npm start
+npm run install-all
 ```
 
-This will spin up frontend.
+This will install all dependencies for frontend and backend.
+
+```
+npm run start-all
+```
+
+This will spin up frontend and backend dev servers.
 
 ### `npm test`
 
