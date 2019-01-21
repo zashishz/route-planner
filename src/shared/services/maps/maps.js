@@ -1,7 +1,7 @@
 import GoogleMapsLoader from 'google-maps';
 
 function initializeMap() {
-    GoogleMapsLoader.KEY = 'AIzaSyBG0SybP0EKWH3Jvwki7IR5AMyO_cUeeQc';
+    GoogleMapsLoader.KEY = process.env.REACT_APP_GOOGLE_API_KEY;
     GoogleMapsLoader.LIBRARIES = ['geometry', 'places'];
 }
 
@@ -22,7 +22,7 @@ const getMap = () => {
         }
     })
 }
-
+// returns maps instance as an export
 const maps = async () => {
     const google = await getMap();
     return google.maps;

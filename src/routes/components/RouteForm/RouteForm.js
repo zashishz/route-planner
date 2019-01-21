@@ -2,21 +2,30 @@ import React, { Component } from 'react';
 import { maps } from '../../../shared/services/maps';
 
 import './RouteForm.css';
+
+/**
+ * Responsible for rendering Route form
+ */
 class RouteForm extends Component {
 
     state = {
         btnDisabled: true
     }
 
+    // saves reference of start location input field to trigger map events
     startInput = React.createRef();
+
+    // saves reference of drop location input field to trigger map events
     dropInput = React.createRef();
 
+    // setup google Autocomplete on input fields as to add locations
     setupAutoComplete = async () => {
         const maps = await this.props.maps();
         this.setupStartInputAutoComplete = new maps.places.Autocomplete(this.startInput);
         this.setupDropInputAutoComplete = new maps.places.Autocomplete(this.dropInput);
     }
 
+    // on form submit ask lng, lat from backend
     getRoute = () => {
         const from = this.setupStartInputAutoComplete.getPlace();
         const to = this.setupDropInputAutoComplete.getPlace();
@@ -27,6 +36,7 @@ class RouteForm extends Component {
         this.setupAutoComplete();
     }
 
+    // checks for btn state enable/disbale based on input fields
     btnStateHandler = () => {
         if(this.startInput.value.length && this.dropInput.value.length) {
             this.setState({btnDisabled: false})
@@ -65,6 +75,7 @@ class RouteForm extends Component {
     }
 }
 
+// bind map instance to this component
 RouteForm.defaultProps = {
     maps
 }

@@ -1,5 +1,6 @@
 import { makeNetworkCall } from '../../../shared/services/axios';
 
+// Responsible for fetching token value
 const fetchToken = async (from, to) => {
     const request = {
         from,
@@ -10,11 +11,13 @@ const fetchToken = async (from, to) => {
     return token;
 };
 
+// Responsible for fetching Route if token value available
 const fetchRoute = async token => {
     const response = await makeNetworkCall.get(`/route/${token}`);
     return response.data;
 };
 
+// Handle server response and retry if server busy
 const fetchDirections = async (from, to) => {
     const token = await fetchToken(from, to);
     let result = await fetchRoute(token);
@@ -25,6 +28,7 @@ const fetchDirections = async (from, to) => {
         result.status &&
         result.status.toLowerCase() === "in progress"
     ) {
+        // calls itself again if server busy
         result = await fetchDirections(from, to);
     }
 

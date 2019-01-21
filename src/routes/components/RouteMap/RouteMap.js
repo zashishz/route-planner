@@ -5,10 +5,16 @@ import './RouteMap.css';
 
 class RouteMap extends Component {
 
+    // saves reference of map container to trigger map events
     routeMapContainer = React.createRef();
+
+    // saves reference to google map instance
     maps;
+
+    // rendered map reference
     gMap;
 
+    // initilize map with Map options and element
     init = async () => {
         this.maps = await this.props.maps();
 
@@ -29,10 +35,12 @@ class RouteMap extends Component {
         }
     }
 
+    // interpolate array to google lat, lng
     interpolatePositions = path => {
         return path.map(([lat, lng]) => new this.maps.LatLng(lat, lng));
     };
 
+    // responsible for drawing route based on path provided.
     renderDirections = ({ path }) => {
         const directionsService = new this.maps.DirectionsService();
         const directionsRenderer = new this.maps.DirectionsRenderer();
@@ -44,6 +52,7 @@ class RouteMap extends Component {
             .slice(1, positions.length - 1)
             .map(location => ({ location, stopover: false }));
 
+        // frame request format for googla maps
         const req = {
             origin: positions[0],
             destination: positions[positions.length - 1],
@@ -57,7 +66,7 @@ class RouteMap extends Component {
             if (flag === this.maps.DirectionsStatus.OK) {
                 directionsRenderer.setDirections(res);
             } else {
-                alert('Error in direction service response');
+                alert('Direction response Error!');
             }
         });
     }
@@ -71,6 +80,7 @@ class RouteMap extends Component {
     }
 }
 
+// bind map instance to this component
 RouteMap.defaultProps = {
     maps
 };
