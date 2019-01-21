@@ -1,16 +1,28 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
 }
 
 .route-details {
-    flex: 0.3;
-    text-align: left;
-    margin-left: 1rem;
-    margin-top: 5rem;
+  flex: 0.3;
+  text-align: left;
+  margin-left: 1rem;
+  margin-top: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: row;
+  }
+  .route-details {
+    flex: 1;
+  }
+  .route-map {
+    flex: 1;
+  }
 }
 
 .route-map {
-    flex: 0.8
+  flex: 0.8;
 }
