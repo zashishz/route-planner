@@ -29,25 +29,25 @@ router.post("/route", function*() {
 router.get("/route/:token", function*() {
   yield delay(getRandomInt(0, 5));
   const dice = getRandomInt(0, 4);
-  // if (!dice) {
-  //   this.status = 500;
-  //   return;
-  // }
+  if (!dice) {
+    this.status = 500;
+    return;
+  }
 
-  // if (dice === 1) {
-  //   this.body = {
-  //     status: "in progress"
-  //   };
-  //   return;
-  // }
+  if (dice === 1) {
+    this.body = {
+      status: "in progress"
+    };
+    return;
+  }
 
-  // if (dice === 2) {
-  //   this.body = {
-  //     status: "failure",
-  //     error: "Location not accessible by car"
-  //   };
-  //   return;
-  // }
+  if (dice === 2) {
+    this.body = {
+      status: "failure",
+      error: "Location not accessible by car"
+    };
+    return;
+  }
 
   this.body = {
     status: "success",
