@@ -1,6 +1,6 @@
 This project contains front-end + backend code as well.
 
-Add .env file to routeplanner-FE folder with following values:
+Add .env file to routeplanner root folder with following values:
 ```
 REACT_APP_BASE_URL='http://localhost:8080/'
 REACT_APP_GOOGLE_API_KEY='XXXXXXXXXXXXXXXXXXXXXXXXX'
