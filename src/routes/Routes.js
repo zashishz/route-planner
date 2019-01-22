@@ -62,7 +62,7 @@ class Routes extends Component {
   };
 
   render() {
-    let { isLoading, directionsApiResponse } = this.state;
+    const { isLoading, directionsApiResponse } = this.state;
     return (
       <div className="container">
         <Loader isLoading={isLoading} />
