@@ -11,9 +11,9 @@
   margin-top: 5rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .container {
-    flex-direction: row;
+    flex-direction: column;
   }
   .route-details {
     flex: 1;
