@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { maps } from "../../../shared/services";
 
+import {
+  MAP_LATITUDE,
+  MAP_LONGITUDE,
+  MAP_ZOOM_LEVEL
+} from "../../../shared/config/constants";
+
 import "./VoyageMap.css";
 
 class VoyageMap extends Component {
@@ -23,8 +29,8 @@ class VoyageMap extends Component {
   // mounts map to DOM reference
   mountMap = () => {
     this.gMap = new this.maps.Map(this.voyageMapContainer, {
-      zoom: 7,
-      center: { lat: 22.372081, lng: 114.107877 }
+      zoom: MAP_ZOOM_LEVEL,
+      center: { lat: MAP_LATITUDE, lng: MAP_LONGITUDE }
     });
   };
 
