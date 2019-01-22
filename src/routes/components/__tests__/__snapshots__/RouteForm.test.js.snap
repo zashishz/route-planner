@@ -4,7 +4,7 @@ exports[`Render RouteForm correctly render correctly 1`] = `
 <div
   className="route-form"
 >
-  <form
+  <div
     className="form-input"
   >
     <label>
@@ -15,17 +15,17 @@ exports[`Render RouteForm correctly render correctly 1`] = `
     >
       <input
         onChange={[Function]}
+        placeholder="Starting Location"
         type="text"
       />
       <button
         onClick={[Function]}
-        type="reset"
       >
         X
       </button>
     </div>
-  </form>
-  <form
+  </div>
+  <div
     className="form-input"
   >
     <label>
@@ -36,16 +36,16 @@ exports[`Render RouteForm correctly render correctly 1`] = `
     >
       <input
         onChange={[Function]}
+        placeholder="Drop-off point"
         type="text"
       />
       <button
         onClick={[Function]}
-        type="reset"
       >
         X
       </button>
     </div>
-  </form>
+  </div>
   <div
     className="info-container"
   />

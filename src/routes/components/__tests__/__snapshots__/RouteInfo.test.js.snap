@@ -17,6 +17,7 @@ exports[`Render RouteInfo correctly render correctly 1`] = `
       className="route-info-item-value"
     >
        
+      :
     </div>
   </div>
   <div
@@ -32,6 +33,7 @@ exports[`Render RouteInfo correctly render correctly 1`] = `
       className="route-info-item-value"
     >
        
+      :
     </div>
   </div>
 </div>
