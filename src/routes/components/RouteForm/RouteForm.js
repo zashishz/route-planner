@@ -55,11 +55,24 @@ class RouteForm extends Component {
     this.props.resetValues();
   };
 
+  // handle reset for input fields
+  clearField = fieldName => {
+    if (fieldName === "start") {
+      this.startInput.value = "";
+    } else if (fieldName === "drop") {
+      this.dropInput.value = "";
+    } else {
+      this.startInput.value = "";
+      this.dropInput.value = "";
+    }
+    this.disableButton();
+  };
+
   render() {
     const { btnDisabled, submitBtnLabel } = this.state;
     return (
       <div className="route-form">
-        <form className="form-input">
+        <div className="form-input">
           <label>Starting Location</label>
           <div className="form-input-controls">
             <input
@@ -67,12 +80,10 @@ class RouteForm extends Component {
               ref={el => (this.startInput = el)}
               onChange={this.btnStateHandler}
             />
-            <button type="reset" onClick={this.disableButton}>
-              X
-            </button>
+            <button onClick={() => this.clearField("start")}>X</button>
           </div>
-        </form>
-        <form className="form-input">
+        </div>
+        <div className="form-input">
           <label>Drop-off point</label>
           <div className="form-input-controls">
             <input
@@ -80,11 +91,9 @@ class RouteForm extends Component {
               ref={el => (this.dropInput = el)}
               onChange={this.btnStateHandler}
             />
-            <button type="reset" onClick={this.disableButton}>
-              X
-            </button>
+            <button onClick={() => this.clearField("drop")}>X</button>
           </div>
-        </form>
+        </div>
         <div className="info-container">{this.props.children}</div>
         <div className="get-route-btn">
           <button
@@ -97,11 +106,7 @@ class RouteForm extends Component {
           <button
             className="reset-btn"
             type="reset"
-            onClick={() => {
-              this.startInput.value = "";
-              this.dropInput.value = "";
-              this.disableButton();
-            }}
+            onClick={() => this.clearField()}
           >
             Reset
           </button>
