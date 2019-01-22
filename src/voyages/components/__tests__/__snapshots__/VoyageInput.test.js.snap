@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render VoyageInput correctly render correctly 1`] = `
+<div
+  className="form-input"
+>
+  <label />
+  <div
+    className="form-input-controls"
+  >
+    <input
+      type="text"
+    />
+    <button>
+      X
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,9 @@
+.voyageMap-container {
+  height: 85vh;
+  padding: 1rem;
+}
+
+.voyageMap-container > div {
+  width: 100%;
+  height: 100%;
+}

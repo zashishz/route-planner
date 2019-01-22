@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render VoyageForm correctly render correctly 1`] = `
+<div
+  className="route-form"
+>
+  <div
+    className="form-input"
+  >
+    <label>
+      Starting Location
+    </label>
+    <div
+      className="form-input-controls"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Starting Location"
+        type="text"
+      />
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+  </div>
+  <div
+    className="form-input"
+  >
+    <label>
+      Drop-off point
+    </label>
+    <div
+      className="form-input-controls"
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Drop-off point"
+        type="text"
+      />
+      <button
+        onClick={[Function]}
+      >
+        X
+      </button>
+    </div>
+  </div>
+  <div
+    className="info-container"
+  />
+  <div
+    className="get-route-btn"
+  >
+    <button
+      className="submit-btn"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Submit
+    </button>
+    <button
+      className="reset-btn"
+      onClick={[Function]}
+      type="reset"
+    >
+      Reset
+    </button>
+  </div>
+</div>
+`;

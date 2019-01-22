@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render VoyageMap correctly render correctly 1`] = `
+<div
+  className="voyageMap-container"
+>
+  <div />
+</div>
+`;
