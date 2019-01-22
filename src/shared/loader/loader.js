@@ -6,7 +6,10 @@ function Loader({ isLoading }) {
   return (
     isLoading && (
       <div className="loader-container">
-        <div className="loader" />
+        <div className="lds-ripple">
+          <div />
+          <div />
+        </div>
       </div>
     )
   );

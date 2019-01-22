@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { RouteMap, RouteForm, RouteInfo } from "./components";
-import { Loader } from "../shared/loader";
+import { Loader } from "../shared/Loader";
 import { fetchDirections } from "./services";
 
 import "./Routes.css";
