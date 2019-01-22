@@ -1,7 +1,7 @@
-import { fetchDirections, fetchRoute, fetchToken } from '../routes'
+import { fetchDirections, fetchRoute, fetchToken } from "../routes";
 import { makeNetworkCall } from "../../../shared/services/axios";
 
-const mockDirectionResponse = {
+const FETCH_ROUTE_RESPONSE = {
   status: "success",
   path: [
     ["22.372081", "114.107877"],
@@ -12,49 +12,48 @@ const mockDirectionResponse = {
   total_time: 1800
 };
 
-const mockTokenResponse = {
+const FETCH_TOKEN_RESPONSE = {
   token: "token"
 };
 
-describe("Test for directions api", () => {
-  it("Should test for fetchToken method", async () => {
-    const post = jest.spyOn(makeNetworkCall, "post");
+describe("API calls check", () => {
+  it("request token from backend", async () => {
+    const postCall = jest.spyOn(makeNetworkCall, "post");
 
-    post.mockImplementation(() => Promise.resolve({ data: mockTokenResponse }));
+    postCall.mockImplementation(() =>
+      Promise.resolve({ data: FETCH_TOKEN_RESPONSE })
+    );
 
     const token = await fetchToken("from", "to");
     expect(token).toBeDefined();
-    post.mockRestore();
+    postCall.mockRestore();
   });
 
-  it("Should test for fetchRoute method", async () => {
-    const get = jest.spyOn(makeNetworkCall, "get");
+  it("request location points from backend", async () => {
+    const getCall = jest.spyOn(makeNetworkCall, "get");
 
-    get.mockImplementation(() =>
-      Promise.resolve({ data: mockDirectionResponse })
+    getCall.mockImplementation(() =>
+      Promise.resolve({ data: FETCH_ROUTE_RESPONSE })
     );
 
-    const result = await fetchRoute("token");
+    const result = await fetchRoute("dummyTokenValue");
     expect(result).toBeDefined();
-    expect(result.status).toEqual("success");
-    get.mockRestore();
+    getCall.mockRestore();
   });
 
-  it("Should test for fetchDirections method", async () => {
+  it("requests location details with token and lng/lat", async () => {
     const get = jest.spyOn(makeNetworkCall, "get");
     const post = jest.spyOn(makeNetworkCall, "post");
 
     post.mockImplementation(() =>
       Promise.resolve({
-        data: {
-          token: "token"
-        }
+        data: FETCH_TOKEN_RESPONSE
       })
     );
 
     get.mockImplementation(() =>
       Promise.resolve({
-        data: mockDirectionResponse
+        data: FETCH_ROUTE_RESPONSE
       })
     );
 
