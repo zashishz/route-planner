@@ -17,6 +17,11 @@ class VoyageMap extends Component {
   init = async () => {
     this.maps = await this.props.maps();
 
+    this.mountMap();
+  };
+
+  // mounts map to DOM reference
+  mountMap = () => {
     this.gMap = new this.maps.Map(this.voyageMapContainer, {
       zoom: 7,
       center: { lat: 22.372081, lng: 114.107877 }
@@ -31,6 +36,8 @@ class VoyageMap extends Component {
     const { directions } = this.props;
     if (directions) {
       this.renderDirections(directions);
+    } else if (directions === null) {
+      this.mountMap();
     }
   }
 
