@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { maps } from "../../../shared/services/maps";
+import { RouteInput } from "../RouteInput";
 
 import "./RouteForm.css";
 
@@ -72,28 +73,18 @@ class RouteForm extends Component {
     const { btnDisabled, submitBtnLabel } = this.state;
     return (
       <div className="route-form">
-        <div className="form-input">
-          <label>Starting Location</label>
-          <div className="form-input-controls">
-            <input
-              type="text"
-              ref={el => (this.startInput = el)}
-              onChange={this.btnStateHandler}
-            />
-            <button onClick={() => this.clearField("start")}>X</button>
-          </div>
-        </div>
-        <div className="form-input">
-          <label>Drop-off point</label>
-          <div className="form-input-controls">
-            <input
-              type="text"
-              ref={el => (this.dropInput = el)}
-              onChange={this.btnStateHandler}
-            />
-            <button onClick={() => this.clearField("drop")}>X</button>
-          </div>
-        </div>
+        <RouteInput
+          label={"Starting Location"}
+          refNode={el => (this.startInput = el)}
+          onChange={this.btnStateHandler}
+          onClick={() => this.clearField("start")}
+        />
+        <RouteInput
+          label={"Drop-off point"}
+          refNode={el => (this.dropInput = el)}
+          onChange={this.btnStateHandler}
+          onClick={() => this.clearField("drop")}
+        />
         <div className="info-container">{this.props.children}</div>
         <div className="get-route-btn">
           <button
