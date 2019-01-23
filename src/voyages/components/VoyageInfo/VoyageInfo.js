@@ -4,8 +4,8 @@ import "./VoyageInfo.css";
 // custom component to render lable and value
 const VoyageInfoItem = ({ label, value }) => (
   <div className="route-info-item">
-    <div className="route-info-item-label">{label}: </div>
-    <div className="route-info-item-value"> {value}:</div>
+    <div className="route-info-item-label">{label} </div>
+    <div className="route-info-item-value"> {value}</div>
   </div>
 );
 
