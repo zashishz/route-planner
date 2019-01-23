@@ -11,13 +11,12 @@ exports[`Render VoyageInfo correctly render correctly 1`] = `
       className="route-info-item-label"
     >
       Total distance
-      : 
+       
     </div>
     <div
       className="route-info-item-value"
     >
        
-      :
     </div>
   </div>
   <div
@@ -27,13 +26,12 @@ exports[`Render VoyageInfo correctly render correctly 1`] = `
       className="route-info-item-label"
     >
       Total time
-      : 
+       
     </div>
     <div
       className="route-info-item-value"
     >
        
-      :
     </div>
   </div>
 </div>
